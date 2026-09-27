@@ -1,3 +1,4 @@
+const { error } = require("node:console");
 
 
 class Tienda {
@@ -10,7 +11,11 @@ class Tienda {
   }
 
   buscarProducto(nombre) {
-    return this.inventario.find(p => p.nombre === nombre) || null;
+    const producto = this.inventario.find(p => p.nombre === nombre);
+    if (!producto) {
+      throw new Error(`Producto '${nombre}' no encontrado`);
+    }
+    return producto;
   }
 
   eliminarProducto(nombre) {
@@ -19,9 +24,11 @@ class Tienda {
     if (indice !== -1) {
       this.inventario.splice(indice, 1);
       return true;
+    } else {
+      throw new Error(`Producto '${nombre}' no pudo ser eliminado`);
     }
-    return false;
   }
+
 }
 
 module.exports = { Tienda };

@@ -23,7 +23,7 @@ describe('Pruebas básicas de la clase Tienda', () => {
         // 1. Preparar
         const miTienda = new Tienda();
         const producto = new Producto('Auriculares', 45000, 'Audio');
-        miTienda.agregarProducto(producto); // Tenemos un producto, pero intentaremos borrar otro
+        miTienda.agregarProducto(producto);
 
         // 2. Actuar
         const resultado = miTienda.eliminarProducto('Silla Gamer');
