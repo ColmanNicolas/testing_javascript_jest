@@ -10,13 +10,14 @@ class Tienda {
   }
 
   buscarProducto(nombre) {
-    return this.inventario.find() || null;
+    return this.inventario.find(p => p.nombre === nombre) || null;
   }
-eliminarProducto(nombre) {
-    const indice = this.inventario.findIndex(producto => producto.nombre === nombre);
-    
+
+  eliminarProducto(nombre) {
+    const indice = this.inventario.findIndex(p => p.nombre === nombre);
+
     if (indice !== -1) {
-      this.inventario.splice(indice, 1); 
+      this.inventario.splice(indice, 1);
       return true;
     }
     return false;
