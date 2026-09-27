@@ -1,4 +1,5 @@
 const { error } = require("node:console");
+const { Producto } = require('./producto');
 
 
 class Tienda {
@@ -29,6 +30,18 @@ class Tienda {
     }
   }
 
+  aplicarDescuento(nombre, porcentaje) {
+    if (porcentaje > 100 || porcentaje < 0)
+      throw new Error("Porcentaje debe ser un valor positivo entre 0 y 100");
+
+    let producto = this.buscarProducto(nombre);
+
+    const descuento = porcentaje / 100;
+    const nuevoPrecio = producto.precio - (producto.precio*descuento);
+
+    producto.actualizarPrecio(nuevoPrecio);
+
+  }
 }
 
 module.exports = { Tienda };

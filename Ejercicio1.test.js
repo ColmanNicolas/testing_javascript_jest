@@ -1,7 +1,7 @@
 const { Tienda } = require('./tienda');
 const { Producto } = require('./producto');
 
-describe('Pruebas básicas de la clase Tienda', () => {
+describe('Pruebas básicas de la clase Tienda - Ejercicio 1', () => {
 
     test('Debe eliminar un producto existente del inventario', () => {
         // 1. Preparar
