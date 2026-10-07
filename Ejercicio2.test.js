@@ -62,18 +62,4 @@ describe('Pruebas Ejercicio 2', () => {
     });
 
 
-
-    afterAll(() => {
-        console.log(`
-      ===============================================================
-      RESPUESTA CONCEPTUAL - SECCIÓN 2
-      Pregunta: Podría haber escrito las pruebas primero antes de modificar el código de la aplicación?
-      ¿Cómo sería el proceso de escribir primero los tests? Describe el proceso con tus palabras.
-
-      
-      Respuesta1: Si, es posibles escribir las pruebas con anticipacion si se acuerda los nombres de las funciones a implementar y los retornos esperados, incluido el tipo de excepciones.
-      Respuesta2: Yo creo que el proceso seria determinar las clases que van a estar involucradas en el test, sacar desde la etapa de diseño o acordar con los programadores los nombres de las funciones que se van a implementar y que en este caso se quieren testear. Tambien determinar los retornos esperados y ya por ultimo tambien debe coincidir el tipo de excepcion que se genera y la que espero recibir 
-      ===============================================================
-    `);
-    });
 });

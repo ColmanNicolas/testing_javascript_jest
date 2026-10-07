@@ -30,21 +30,5 @@ describe('Pruebas Ejercicio 3 - Dobles de prueba (Mocks)', () => {
     }).toThrow("Porcentaje debe ser un valor positivo entre 0 y 100");
   });
 
-  afterAll(() => {
-    console.log(`
-      ===============================================================
-      RESPUESTA CONCEPTUAL - SECCIÓN 3
-      Pregunta 1: En lo que va del trabajo práctico, ¿puedes identificar 'Controladores' y 'Resguardos'?
-      Respuesta 1: 
-        - Controlador (Driver): Es el framework de testing (Jest) junto con los archivos de prueba (.test.js), que estimulan y ejecutan las clases bajo prueba.
-        - Resguardo (Stub/Mock): Es el objeto simulado 'productoMock', que reemplaza la dependencia real de la clase Producto para aislar a la clase Tienda durante la prueba.
-
-      Pregunta 2: ¿Qué es un "test double"? ¿Hay otros nombres para los objetos/funciones simulados?
-      Respuesta 2: 
-        Un "test double" es un término genérico para cualquier objeto ficticio que sustituye a un componente real en una prueba de software para aislar la unidad bajo prueba o evitar efectos colaterales.
-        Otros tipos de dobles incluyen: Dummy, Stub, Spy, Mock y Fake.
-      ===============================================================
-    `);
-  });
 
 });

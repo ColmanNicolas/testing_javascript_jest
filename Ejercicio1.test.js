@@ -33,17 +33,5 @@ describe('Pruebas básicas de la clase Tienda - Ejercicio 1', () => {
         expect(miTienda.inventario.length).toBe(1); // El inventario sigue intacto
     });
 
-    afterAll(() => {
-        console.log(`
-      ===============================================================
-      RESPUESTA CONCEPTUAL - SECCIÓN 1
-      Pregunta: ¿Puedes identificar pruebas de unidad y de integración en la práctica que se realizó?
-      
-      Respuesta: En esta primera práctica solo hemos realizado pruebas de UNIDAD, 
-      ya que estamos testeando el comportamiento de métodos individuales 
-      (agregar, buscar y eliminar) de forma aislada.
-      ===============================================================
-    `);
-    });
 });
 
