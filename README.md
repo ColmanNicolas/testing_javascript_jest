@@ -9,6 +9,8 @@
 - [Sección 5: Integración y Cobertura](#sección-5-integración-y-cobertura)
 - [Instrucciones de Ejecución y Notas Técnicas](#instrucciones-de-ejecución-y-notas-técnicas)
 
+---
+
 # sección-1-pruebas-unitarias-básicas
 
 ### Pregunta Conceptual
@@ -21,8 +23,9 @@ En esta primera etapa se realizaron exclusivamente **pruebas de unidad**. El obj
 - `buscarProducto`
 - `eliminarProducto`
 
+---
 
-## Sección 2
+## Sección 2: TDD y Excepciones
 
 ### Pregunta
 > **¿Podría haber escrito las pruebas primero antes de modificar el código de la aplicación? ¿Cómo sería el proceso de escribir primero los tests? Describe el proceso con tus palabras.**
@@ -34,6 +37,31 @@ En esta primera etapa se realizaron exclusivamente **pruebas de unidad**. El obj
 
 * **Respuesta 2:**  
   Yo creo que el proceso sería determinar las clases que van a estar involucradas en el test, sacar desde la etapa de diseño o acordar con los programadores los nombres de las funciones que se van a implementar y que en este caso se quieren testear. También determinar los retornos esperados y ya por último también debe coincidir el tipo de excepción que se genera y la que espero recibir.
+
+---
+
+## Sección 3: Dobles de Prueba (Mocks)
+
+### Pregunta 1
+
+> **En lo que va del trabajo práctico, ¿puedes identificar 'Controladores' y 'Resguardos'?**
+
+### Respuesta 1
+
+* **Controlador (Driver):** Es el framework de testing (Jest) junto con los archivos de prueba (`.test.js`), que estimulan y ejecutan las clases bajo prueba.
+* **Resguardo (Stub/Mock):** Es el objeto simulado `productoMock`, que reemplaza la dependencia real de la clase `Producto` para aislar a la clase `Tienda` durante la prueba.
+
+### Pregunta 2
+
+> **¿Qué es un "test double"? ¿Hay otros nombres para los objetos/funciones simulados?**
+
+### Respuesta 2
+
+Un "test double" es un término genérico para cualquier objeto ficticio que sustituye a un componente real en una prueba de software para aislar la unidad bajo prueba o evitar efectos colaterales.
+
+Otros tipos de dobles incluyen: Dummy, Stub, Spy, Mock y Fake.
+
+---
 
 ## Sección 4: Uso de Fixtures
 
@@ -62,7 +90,9 @@ Se aplica predominantemente un enfoque de **CAJA NEGRA**. La preparación de los
 * **Setup (en Jest: `beforeEach` / `beforeAll`):** Es la fase previa de preparación donde se inicializan variables, se crean instancias de objetos, se cargan datos de prueba o se abren conexiones necesarias.
 * **Teardown (en Jest: `afterEach` / `afterAll`):** Es la fase posterior de limpieza o desmantelamiento donde se eliminan datos temporales, se cierran conexiones (bases de datos, archivos) o se restablecen estados globales para no dejar residuos ni afectar ejecuciones posteriores.
 
-## Sección 5
+---
+
+## Sección 5: Integración y Cobertura
 
 ### Pregunta 1
 > **¿Realizó una prueba de cobertura completa? ¿Qué tipo de cobertura utilizó?**
@@ -82,6 +112,7 @@ En la integración ascendente, se prueban primero los componentes o funciones de
 3. Cuando 'Tienda' pueda gestionar las operaciones básicas ABM de manera estable, se integran flujos para lanzar y capturar excepciones dentro de mis funciones base para complementar y reforzar el comportamiento esperable de mi clase.
 4. En pasos posteriores se crean funciones más complejas como 'aplicarDescuento' y 'calcularTotalCarrito' que integran funciones básicas del ABM de productos. En esta etapa se busca cumplir con requerimientos de logica del negocio proyectadas para el sistema.
 
+---
 
 ## Instrucciones de Ejecución y Notas Técnicas
 
@@ -108,7 +139,7 @@ Tener instalado Node.js (versión 16 o superior) y npm en el sistema.
 
 Abrir la terminal y clonar el proyecto:
 
-git clone <>
+git clone https://github.com/ColmanNicolas/testing_javascript_jest.git
 cd testing_javascript_jest
 
 ### 2. Instalación de dependencias
