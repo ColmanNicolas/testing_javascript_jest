@@ -30,6 +30,7 @@ class Tienda {
     }
   }
 
+
   aplicarDescuento(nombre, porcentaje) {
     if (porcentaje > 100 || porcentaje < 0)
       throw new Error("Porcentaje debe ser un valor positivo entre 0 y 100");
@@ -42,6 +43,22 @@ class Tienda {
     producto.actualizarPrecio(nuevoPrecio);
 
   }
+
+
+/**
+   * Calcula el total de una lista de productos en el carrito de compras.
+   * @param {string[]} listaNombres - Arreglo de strings con los nombres de los productos a sumar.
+   * @returns {number} La suma acumulada de los precios de los productos.
+   * @throws {Error} Si algún producto del arreglo no existe en el inventario.
+   */
+  
+  calcularTotalCarrito(listaNombres) {
+    return listaNombres.reduce((total, nombre) => {
+      const producto = this.buscarProducto(nombre);
+      return total + producto.precio;
+    }, 0);
+  }
+
 }
 
 module.exports = { Tienda };
